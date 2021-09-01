@@ -8,10 +8,17 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args)
     {
-        System.out.print("What is your name?");
         Scanner input = new Scanner(System.in);
-        String name = input.next();
-        System.out.print("Hello " + name + ", nice to meet you!");
+        System.out.print("Enter the principal: ");
+
+        int p = input.nextInt();
+        System.out.print("Enter the rate of interest: ");
+        float r = input.nextFloat();
+        System.out.print("Enter the number of years: ");
+        int t = input.nextInt();
+
+        float a = (float) Math.ceil((p + ((t * (r/100)) * p)) * 100) / 100;
+        System.out.printf("After %d years at %.1f%%, the investment will be worth $%.2f", t, r, a);
         System.out.print("\n");
     }
 }
